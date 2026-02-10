@@ -132,7 +132,7 @@ input:checked + label::after {
   color: #6b7280;
 }
 
-/* CONTENT TEXT (Original Reverted) */
+/* CONTENT TEXT SPACING */
 .content-text {
   font-size: 19px;
   line-height: 1.8;
