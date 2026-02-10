@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Finora – Finance Made Simple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Finora Logo">
+    </div>
+    
+    <button class="menu-toggle" id="menuToggleBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="navMenu">
+      <a class="nav-link active" data-section="home">Home</a>
+      <a class="nav-link" data-section="blogs">Blogs</a>
+      <a class="nav-link" data-section="calculators">Calculators</a>
+      <a class="nav-link" data-section="about">About</a>
+      <a class="nav-link" data-section="contact">Contact</a>
+      <a class="nav-link" data-section="privacy">Privacy</a>
+    </nav>
+    <div class="theme-switch">
+      <input type="checkbox" id="themeToggle" checked>
+      <label for="themeToggle"></label>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="section active">
+    <div class="home-text">
+      <h1>Finance Made Simple</h1>
+      <p>Finora is a simple and reliable finance education platform designed to help students and beginners understand money, investing, and personal finance without complex terminology.</p>
+      <p>In today's fast-paced economy, financial literacy is a survival skill. Many students find finance intimidating due to heavy jargon. Finora removes that fear by explaining financial concepts in a clear, practical, and beginner-friendly way.</p>
+      <p>Whether you are learning about the power of compounding through SIPs, choosing your first mutual fund, or understanding how interest impacts your savings, Finora helps you build financial confidence step by step.</p>
+      <p>The platform focuses on education, transparency, and long-term learning—not shortcuts or unrealistic promises.</p>
+      <p><strong>No login. No confusion. Just finance.</strong></p>
+      <ul class="home-points">
+        <li>📘 Beginner-friendly finance blogs</li>
+        <li>📊 SIP & interest calculators</li>
+        <li>🎓 Built especially for students & learners</li>
+      </ul>
+    </div>
+    <p class="home-disclaimer">Disclaimer: Finora is an educational resource. We are not SEBI-registered advisors. Financial decisions carry risk; please consult a professional before investing.</p>
+  </section>
+
+  <section id="blogs" class="section">
+    <h2>Blogs</h2>
+    <div class="blog-list" id="blogList">Loading blogs...</div>
+  </section>
+
+  <section id="calculators" class="section">
+    <div class="calc-container">
+      <div class="calculator-box">
+        <h3>SIP Calculator</h3>
+        <label>Monthly Investment (₹)</label>
+        <input type="number" id="sipAmount" placeholder="e.g. 5000">
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="sipRate" placeholder="e.g. 12">
+        <label>Time (Years)</label>
+        <input type="number" id="sipYears" placeholder="e.g. 10">
+        <button onclick="calculateSIP()">Calculate SIP</button>
+        <p id="sipResult" class="res"></p>
+      </div>
+      <div class="calculator-box">
+        <h3>Interest Calculator</h3>
+        <label>Principal Amount (₹)</label>
+        <input type="number" id="principal" placeholder="e.g. 10000">
+        <label>Interest Rate (%)</label>
+        <input type="number" id="rate" placeholder="e.g. 8">
+        <label>Time (Years)</label>
+        <input type="number" id="time" placeholder="e.g. 5">
+        <button onclick="calculateInterest()">Calculate Interest</button>
+        <p id="interestResult" class="res"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Finora</h2>
+    <div class="content-text">
+      <h3>What is Finora?</h3>
+      <p>Finora is an independent finance education platform created to help students and beginners understand personal finance and investing in a simple and practical way.</p>
+      <h3>Our Mission</h3>
+      <p>Our mission is to remove confusion, fear, and misinformation around finance by providing clear explanations and educational tools that anyone can understand.</p>
+      <h3>What We Offer</h3>
+      <p>Finora provides high-quality finance blogs, easy-to-use calculators, and learning resources focused on SIPs, mutual funds, interest rates, and long-term financial planning.</p>
+      <h3>Who We Are</h3>
+      <p>Founded by <strong>Sairaj Kashid</strong>, Finora is built with a student-first mindset and focuses purely on education rather than financial advice or product promotion.</p>
+      <h3>Contact Us</h3>
+      <p>Reach out at: <strong>mastermind.entrerpreneure.09@gmail.com</strong></p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="content-text">
+      <p>Have a question about financial literacy, our calculators, or our blog posts? We’d love to hear from you. At Finora, we are committed to making finance simple and accessible for everyone.</p>
+      <h3>Get in Touch</h3>
+      <p>Whether you have a suggestion for a new feature or want to report a bug with one of our calculators, feel free to reach out to us via email:</p>
+      <p><strong>Email:</strong> mastermind.entrerpreneure.09@gmail.com</p>
+      <p><strong>Response Time:</strong> We typically respond to all inquiries within 24–48 hours.</p>
+      <h3>Collaboration & Feedback</h3>
+      <p>Are you a finance expert or a student with a unique perspective? We are always looking for feedback to improve our educational resources. Your input helps us build better tools for the community.</p>
+      <h3>Follow Our Journey</h3>
+      <p>Stay updated with the latest financial tips and platform updates by visiting our Blogs section regularly.</p>
+    </div>
+  </section>
+
+  <section id="privacy" class="section">
+    <div class="content-text">
+      <h2>Privacy Policy</h2>
+      <p>At Finora, we value the privacy of our visitors. This policy outlines how we handle information.</p>
+      <h3>Information We Collect</h3>
+      <p>Finora is an educational resource and does not collect personal information directly from users. We do not require accounts, names, or email addresses to use our calculators and blogs.</p>
+      <h3>Cookies and Web Beacons</h3>
+      <p>Like many other websites, Finora may use 'cookies' to store information about visitor preferences and the pages on the website that the visitor accessed or visited. This information is used to optimize the user experience.</p>
+      <h3>Third-Party Ads</h3>
+      <p>We use Google AdSense to serve ads. Google may use cookies (such as the DART cookie) to serve ads based on your visit to this and other sites on the internet.</p>
+      <h3>Third-Party Links</h3>
+      <p>Our content may contain links to external sites. We are not responsible for the privacy practices or content of these third-party websites.</p>
+      <h3>Consent</h3>
+      <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Founded by Sairaj Kashid</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
