@@ -4,14 +4,14 @@ const sections = document.querySelectorAll(".section");
 const navMenu = document.getElementById("navMenu");
 const menuToggleBtn = document.getElementById("menuToggleBtn");
 
-// Mobile Toggle Functionality
+// Mobile Toggle functionality
 menuToggleBtn.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
 
 navLinks.forEach(link => {
   link.addEventListener("click", () => {
-    navMenu.classList.remove("show"); // Close mobile menu
+    navMenu.classList.remove("show"); // Close mobile menu when a link is clicked
     navLinks.forEach(l => l.classList.remove("active"));
     link.classList.add("active");
     sections.forEach(sec => sec.classList.remove("active"));
@@ -26,7 +26,7 @@ document.getElementById("themeToggle").addEventListener("change", (e) => {
   document.body.classList.toggle("dark", e.target.checked);
 });
 
-/* BLOGS - REVERTED TO ORIGINAL LOGIC */
+/* BLOGS */
 const BLOG_API_URL = "https://script.google.com/macros/s/AKfycbyQ9vfflC6XdZJnz29w63pwoOLT5og6dbR_qrgiK7djSCnrtZnn-3SEopdB2Juy-5eO7w/exec";
 
 fetch(BLOG_API_URL)
@@ -43,10 +43,12 @@ fetch(BLOG_API_URL)
     Object.keys(grouped).forEach(title => {
       const blogItem = document.createElement("div");
       blogItem.className = "blog-item";
+      
+      // FIX: .replace(/\n/g, '<br>') added to entry.content to handle Sheets line breaks
       const subsHTML = grouped[title].map(entry => `
         <div class="sub-item">
           <div class="sub-title"><span>${entry.subtitle}</span><span class="sub-plus">+</span></div>
-          <div class="sub-content"><p>${entry.content}</p></div>
+          <div class="sub-content"><p>${entry.content.replace(/\n/g, '<br>')}</p></div>
         </div>`).join("");
 
       blogItem.innerHTML = `
