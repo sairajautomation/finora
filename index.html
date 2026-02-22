@@ -72,8 +72,21 @@
         <button onclick="calculateSIP()">Calculate SIP</button>
         <p id="sipResult" class="res"></p>
       </div>
+
       <div class="calculator-box">
-        <h3>Interest Calculator</h3>
+        <h3>Compound Interest Calculator</h3>
+        <label>Principal Amount (₹)</label>
+        <input type="number" id="ciPrincipal" placeholder="e.g. 10000">
+        <label>Interest Rate (%)</label>
+        <input type="number" id="ciRate" placeholder="e.g. 8">
+        <label>Time (Years)</label>
+        <input type="number" id="ciTime" placeholder="e.g. 5">
+        <button onclick="calculateCompoundInterest()">Calculate Compound Interest</button>
+        <p id="ciResult" class="res"></p>
+      </div>
+
+      <div class="calculator-box">
+        <h3>Simple Interest Calculator</h3>
         <label>Principal Amount (₹)</label>
         <input type="number" id="principal" placeholder="e.g. 10000">
         <label>Interest Rate (%)</label>
