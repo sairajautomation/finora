@@ -28,7 +28,6 @@ document.getElementById("themeToggle").addEventListener("change", (e) => {
 
 /* BLOGS */
 const BLOG_API_URL = "https://script.google.com/macros/s/AKfycbyQ9vfflC6XdZJnz29w63pwoOLT5og6dbR_qrgiK7djSCnrtZnn-3SEopdB2Juy-5eO7w/exec";
-
 fetch(BLOG_API_URL)
   .then(res => res.json())
   .then(data => {
@@ -44,7 +43,6 @@ fetch(BLOG_API_URL)
       const blogItem = document.createElement("div");
       blogItem.className = "blog-item";
       
-      // FIX: .replace(/\n/g, '<br>') added to entry.content to handle Sheets line breaks
       const subsHTML = grouped[title].map(entry => `
         <div class="sub-item">
           <div class="sub-title"><span>${entry.subtitle}</span><span class="sub-plus">+</span></div>
@@ -86,12 +84,28 @@ function calculateSIP() {
   const investedAmount = monthly * months;
   let totalValue = 0;
   for (let i = 0; i < months; i++) { 
-    totalValue = (totalValue + monthly) * (1 + rate); 
+    totalValue = (totalValue + monthly) * (1 + rate);
   }
   const estReturns = totalValue - investedAmount;
   document.getElementById("sipResult").innerHTML = `
     Invested Amount: ₹${Math.round(investedAmount).toLocaleString('en-IN')}<br>
     Est. Returns: ₹${Math.round(estReturns).toLocaleString('en-IN')}<br>
+    Total Value: ₹${Math.round(totalValue).toLocaleString('en-IN')}
+  `;
+}
+
+function calculateCompoundInterest() {
+  const p = Number(document.getElementById("ciPrincipal").value);
+  const r = Number(document.getElementById("ciRate").value) / 100;
+  const t = Number(document.getElementById("ciTime").value);
+  
+  // Formula: A = P(1 + r/n)^(nt). Assuming n=1 (compounded annually)
+  const totalValue = p * Math.pow((1 + r), t);
+  const interest = totalValue - p;
+  
+  document.getElementById("ciResult").innerHTML = `
+    Principal Amount: ₹${Math.round(p).toLocaleString('en-IN')}<br>
+    Interest Earned: ₹${Math.round(interest).toLocaleString('en-IN')}<br>
     Total Value: ₹${Math.round(totalValue).toLocaleString('en-IN')}
   `;
 }
